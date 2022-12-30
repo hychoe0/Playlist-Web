@@ -17,6 +17,9 @@
       },
       "api": {
         "playlistweb": {}
+      },
+      "storage": {
+        "imagestorage": {}
       }
     }
   }
