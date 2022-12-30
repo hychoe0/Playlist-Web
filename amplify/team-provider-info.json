@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "playlistweb079ad2a0": {}
+      },
+      "api": {
+        "playlistweb": {}
       }
     }
   }
