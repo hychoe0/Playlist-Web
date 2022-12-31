@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./color.scss";
+
+.body {
+  font-family: "Jost", sans-serif;
+}
+
+.description {
+  font-family: "Jost", sans-serif;
+  width: auto;
+  height: 302px;
+  padding: 3.26vw 21.81vw 7.5vw 21.53vw;
+  background-color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  #desc-title {
+    height: 65px;
+    font-size: 45px;
+    font-weight: 500;
+  }
+
+  #desc-info {
+    height: 46px;
+    font-size: 32px;
+    font-weight: 300;
+  }
+}
+
+.icons {
+  width: 56.67vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  #icon1 {
+    width: 10.76vw;
+    height: 155px;
+    margin: 0px 4.64vw 0px 0px;
+  }
+
+  #icon2 {
+    width: 10.56vw;
+    height: 142px;
+    align-self: flex-start;
+    margin: 0.42vw 5.54vw 0px 0px;
+  }
+  #icon3 {
+    width: 10.76vw;
+    height: 155px;
+  }
+
+  #arrow1 {
+    width: 2.26vw;
+    height: 27.2px;
+    align-self: flex-end;
+    margin: 0px 5.54vw 4.2vw 0px;
+  }
+
+  #arrow2 {
+    width: 2.26vw;
+    height: 27.2px;
+    align-self: flex-end;
+    margin: 0px 4.36vw 4.2vw 0px;
+  }
+}
