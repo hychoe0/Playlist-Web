@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
 import add_playlist_icon from "./assets/add_playlist_icon.svg";
@@ -19,6 +20,11 @@ export const Home = () => {
           <FaArrowRight id="arrow2" />
           <img src={playlist_icon} id="icon3" alt="Playlist_icon" />
         </div>
+      </div>
+      <div className="upload">
+        <button type="button" onClick={() => console.log("clicked")}>
+          Upload an image
+        </button>
       </div>
     </div>
   );
