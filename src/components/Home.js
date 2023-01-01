@@ -22,7 +22,11 @@ export const Home = () => {
         </div>
       </div>
       <div className="upload">
-        <button type="button" onClick={() => console.log("clicked")}>
+        <button
+          type="button"
+          id="upload-button"
+          onClick={() => console.log("upload-button clicked")}
+        >
           Upload an image
         </button>
       </div>
