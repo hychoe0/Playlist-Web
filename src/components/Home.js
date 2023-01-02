@@ -21,6 +21,7 @@ export const Home = () => {
           <img src={playlist_icon} id="icon3" alt="Playlist_icon" />
         </div>
       </div>
+      <div className="background"></div>
       <div className="upload">
         <button
           type="button"
