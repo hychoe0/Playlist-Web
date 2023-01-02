@@ -9,7 +9,7 @@ import "./global.scss";
 
 export const Home = () => {
   return (
-    <div id="home">
+    <div className="home">
       <div className="description">
         <span id="desc-title">playlist.jpg</span>
         <span id="desc-info">Convert an image to a customized playlist</span>
