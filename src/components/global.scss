@@ -73,6 +73,7 @@
 .upload {
   text-align: center;
   margin-top: -1395px;
+  align-items: center;
 
   #upload-button {
     font-family: "Jost", sans-serif;
@@ -91,6 +92,12 @@
   #upload-button:hover {
     background-color: #8072cb;
     cursor: pointer;
+  }
+  #selector {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
   }
 }
 

@@ -1,4 +1,6 @@
 import React from "react";
+import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
+import { defaultGenres, defaultMoods } from "../constants.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
@@ -8,6 +10,14 @@ import playlist_icon from "./assets/playlist_icon.svg";
 import "./global.scss";
 
 export const Home = () => {
+  const [genre, setGenre] = React.useState([]);
+  const [mood, setMood] = React.useState([]);
+
+  React.useEffect(() => {
+    console.log(`Genres: ${genre}`);
+    console.log(`Moods: ${mood}`);
+  }, [genre, mood]);
+
   return (
     <div className="home">
       <div className="description">
@@ -30,6 +40,9 @@ export const Home = () => {
         >
           Upload an image
         </button>
+        <span id="selector">
+          <GenreDropDown data={defaultGenres} setData={setGenre} />
+        </span>
       </div>
     </div>
   );
