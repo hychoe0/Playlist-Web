@@ -1,5 +1,6 @@
 import React from "react";
 import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
+import MoodDropDown from "./Selector/MoodDropDown/MoodDropDown.js";
 import { defaultGenres, defaultMoods } from "../constants.js";
 
 import { FaArrowRight } from "react-icons/fa";
@@ -31,7 +32,14 @@ export const Home = () => {
           <img src={playlist_icon} id="icon3" alt="Playlist_icon" />
         </div>
       </div>
-      <div className="background"></div>
+      <div className="background">
+        <span id="genre-dropdown">
+          <GenreDropDown data={defaultGenres} setData={setGenre} />
+        </span>
+        <span id="mood-dropdown">
+          <MoodDropDown data={defaultMoods} setData={setMood} />
+        </span>
+      </div>
       <div className="upload">
         <button
           type="button"
@@ -40,9 +48,6 @@ export const Home = () => {
         >
           Upload an image
         </button>
-        <span id="selector">
-          <GenreDropDown data={defaultGenres} setData={setGenre} />
-        </span>
       </div>
     </div>
   );

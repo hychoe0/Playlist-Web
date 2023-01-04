@@ -10,10 +10,10 @@ const animatedComponents = makeAnimated();
  * data: data for dropdown selection
  * setData: useState
  */
-export default function GenreDropDown({ data, setData }) {
+export default function MoodDropDown({ data, setData }) {
   return (
     <div className="selection-menu">
-      <span id="selection-title">Select any genre</span>
+      <span id="selection-title">Select any mood</span>
       <Select
         className="dropdown"
         closeMenuOnSelect={false}
@@ -22,10 +22,10 @@ export default function GenreDropDown({ data, setData }) {
         isMulti
         options={data}
         onChange={(newData) => {
-          const genre = newData.map((v) => v.value);
-          setData(genre);
-          // if genre is correctly selected
-          console.log(genre);
+          const mood = newData.map((v) => v.value);
+          setData(mood);
+          // if mood is correctly selected
+          console.log(mood);
         }}
       />
     </div>

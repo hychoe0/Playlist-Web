@@ -50,6 +50,7 @@
     align-self: flex-start;
     margin: 0.42vw 5.54vw 0px 0px;
   }
+
   #icon3 {
     width: 10.76vw;
     height: 155px;
@@ -93,12 +94,6 @@
     background-color: #8072cb;
     cursor: pointer;
   }
-  #selector {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    text-align: justify;
-  }
 }
 
 .background {
@@ -109,4 +104,16 @@
   flex-direction: column;
   align-items: center;
   background-color: #d9d9d9;
+
+  #genre-dropdown {
+    top: 100px;
+    position: relative;
+    text-align: justify;
+  }
+
+  #mood-dropdown {
+    top: 150px;
+    position: relative;
+    text-align: justify;
+  }
 }
