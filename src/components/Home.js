@@ -1,7 +1,8 @@
 import React from "react";
 import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
 import MoodDropDown from "./Selector/MoodDropDown/MoodDropDown.js";
-import { defaultGenres, defaultMoods } from "../constants.js";
+import NumPlayDropDown from "./Selector/NumPlayDropDown/NumPlayDropDown.jsx";
+import { defaultGenres, defaultMoods, defaultNumPlays } from "../constants.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
@@ -13,11 +14,13 @@ import "./global.scss";
 export const Home = () => {
   const [genre, setGenre] = React.useState([]);
   const [mood, setMood] = React.useState([]);
+  const [numPlay, setNumPlay] = React.useState([]);
 
   React.useEffect(() => {
     console.log(`Genres: ${genre}`);
     console.log(`Moods: ${mood}`);
-  }, [genre, mood]);
+    console.log(`NumPlay: ${numPlay}`);
+  }, [genre, mood, numPlay]);
 
   return (
     <div className="home">
@@ -38,6 +41,9 @@ export const Home = () => {
         </span>
         <span id="mood-dropdown">
           <MoodDropDown data={defaultMoods} setData={setMood} />
+        </span>
+        <span id="numPlay-dropdown">
+          <NumPlayDropDown data={defaultNumPlays} setData={setNumPlay} />
         </span>
       </div>
       <div className="upload">
