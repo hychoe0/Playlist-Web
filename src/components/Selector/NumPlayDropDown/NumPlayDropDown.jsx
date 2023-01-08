@@ -20,11 +20,11 @@ export default function NumPlayDropDown({ data, setData }) {
         components={animatedComponents}
         defaultValue={[]}
         options={data}
-        handleChange={(data) => {
-          const numPlay = data.map((v) => v.value);
+        onChange={(newData) => {
+          const numPlay = newData;
           setData(numPlay);
           // if numPlay is correctly selected
-          console.log(data);
+          console.log(numPlay);
         }}
       />
     </div>
