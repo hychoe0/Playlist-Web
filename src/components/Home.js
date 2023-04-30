@@ -3,6 +3,7 @@ import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
 import MoodDropDown from "./Selector/MoodDropDown/MoodDropDown.js";
 import NumPlayDropDown from "./Selector/NumPlayDropDown/NumPlayDropDown.jsx";
 import { defaultGenres, defaultMoods, defaultNumPlays } from "../constants.js";
+import { genreSeeds } from "../constants.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
@@ -37,7 +38,7 @@ export const Home = () => {
       </div>
       <div className="background">
         <span id="genre-dropdown">
-          <GenreDropDown data={defaultGenres} setData={setGenre} />
+          <GenreDropDown data={genreSeeds} setData={setGenre} />
         </span>
         <span id="mood-dropdown">
           <MoodDropDown data={defaultMoods} setData={setMood} />

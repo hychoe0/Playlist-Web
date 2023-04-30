@@ -11,6 +11,8 @@ const animatedComponents = makeAnimated();
  * setData: useState
  */
 export default function GenreDropDown({ data, setData }) {
+  const options = data.map((genre) => ({ value: genre, label: genre }));
+
   return (
     <div className="selection-menu">
       <span id="selection-title">Select any genre</span>
@@ -20,7 +22,7 @@ export default function GenreDropDown({ data, setData }) {
         components={animatedComponents}
         defaultValue={[]}
         isMulti
-        options={data}
+        options={options}
         onChange={(newData) => {
           const genre = newData.map((v) => v.value);
           setData(genre);
