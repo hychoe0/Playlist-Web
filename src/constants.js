@@ -156,13 +156,47 @@ export const genreSeeds = [
   "work-out",
   "world-music",
 ];
+
 // Vibe Constants
 export const vibeSeeds = [
   {
-    name: "Energetic",
+    value: "energetic",
+    label: "Energetic",
     acousticness: 0,
     danceability: 1,
     energy: 1,
     loudness: 1,
+  },
+  {
+    value: "joyful",
+    label: "Joyful",
+    acousticness: 0.1,
+    danceability: 0.9,
+    energy: 0.8,
+    loudness: 0.7,
+  },
+  {
+    value: "daily",
+    label: "Daily",
+    acousticness: 0.2,
+    danceability: 0.6,
+    energy: 0.7,
+    loudness: 0.6,
+  },
+  {
+    value: "chill",
+    label: "Chill",
+    acousticness: 0.5,
+    danceability: 0.5,
+    energy: 0.5,
+    loudness: 0.5,
+  },
+  {
+    value: "relax",
+    label: "Relax",
+    acousticness: 1,
+    danceability: 0,
+    energy: 0,
+    loudness: 0.1,
   },
 ];

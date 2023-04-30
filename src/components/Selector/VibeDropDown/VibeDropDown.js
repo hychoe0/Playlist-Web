@@ -10,21 +10,26 @@ const animatedComponents = makeAnimated();
  * data: data for dropdown selection
  * setData: useState
  */
-export default function MoodDropDown({ data, setData }) {
+export default function VibeDropDown({ data, setData }) {
+  const options = data.map((vibe) => ({
+    value: vibe.value,
+    label: vibe.label,
+  }));
+
   return (
     <div className="selection-menu">
-      <span id="selection-title">Select a mood</span>
+      <span id="selection-title">Select a Vibe</span>
       <Select
         className="dropdown"
         closeMenuOnSelect={false}
         components={animatedComponents}
         defaultValue={[]}
-        options={data}
+        options={options}
         onChange={(newData) => {
-          const mood = newData.value;
-          setData(mood);
-          // if mood is correctly selected
-          console.log(mood);
+          const selectedVibe = newData.value;
+          setData(selectedVibe);
+          // if vibe is correctly selected
+          console.log(data.find((vibe) => vibe.value === selectedVibe).energy);
         }}
       />
     </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
-import MoodDropDown from "./Selector/MoodDropDown/MoodDropDown.js";
+import MoodDropDown from "./Selector/VibeDropDown/VibeDropDown.js";
 import NumPlayDropDown from "./Selector/NumPlayDropDown/NumPlayDropDown.jsx";
 import { defaultGenres, defaultMoods, defaultNumPlays } from "../constants.js";
-import { genreSeeds } from "../constants.js";
+import { genreSeeds, vibeSeeds } from "../constants.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
@@ -14,14 +14,14 @@ import "./global.scss";
 
 export const Home = () => {
   const [genre, setGenre] = React.useState([]);
-  const [mood, setMood] = React.useState([]);
+  const [vibe, setVibe] = React.useState([]);
   const [numPlay, setNumPlay] = React.useState([]);
 
   React.useEffect(() => {
     console.log(`Genres: ${genre}`);
-    console.log(`Moods: ${mood}`);
+    console.log(`Vibe: ${vibe}`);
     console.log(`NumPlay: ${numPlay}`);
-  }, [genre, mood, numPlay]);
+  }, [genre, vibe, numPlay]);
 
   return (
     <div className="home">
@@ -41,7 +41,7 @@ export const Home = () => {
           <GenreDropDown data={genreSeeds} setData={setGenre} />
         </span>
         <span id="mood-dropdown">
-          <MoodDropDown data={defaultMoods} setData={setMood} />
+          <MoodDropDown data={vibeSeeds} setData={setVibe} />
         </span>
         <span id="numPlay-dropdown">
           <NumPlayDropDown data={defaultNumPlays} setData={setNumPlay} />
