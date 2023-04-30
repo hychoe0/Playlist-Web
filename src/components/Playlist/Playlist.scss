@@ -1,0 +1,17 @@
+@import "../global.scss";
+
+.playlist {
+  font-family: "Jost", sans-serif;
+  text-align: center;
+  margin-top: 550px;
+
+  #playlist-title {
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  #playlist-login {
+    font-weight: 300;
+    font-size: 25px;
+  }
+}
