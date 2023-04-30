@@ -13,11 +13,15 @@ export function Playlist() {
   })
     .then((response) => response.json())
     .then((data) => {
-      const accessToken = data.access_token;
+      const ACCESS_TOKEN = data.access_token;
+      var rec_endpoint =
+        //"https://api.spotify.com/v1/recommendations";
 
-      fetch("https://api.spotify.com/v1/artists/3Nrfpe0tUJi4K4DXYWgMUX", {
+        "https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical%2Ccountry&seed_tracks=0c6xIDDpzE81m2q797ordA";
+      fetch(url, {
+        method: "GET",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${ACCESS_TOKEN}`,
         },
       })
         .then((response) => response.json())
