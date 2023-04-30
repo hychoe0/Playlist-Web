@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { CLIENT_ID, CLIENT_SECRET } from "../../Credential.js";
+import { ARTIST, RECOMMENDATION } from "../../constants.js";
 
 import "./Playlist.scss";
 
@@ -14,11 +15,9 @@ export function Playlist() {
     .then((response) => response.json())
     .then((data) => {
       const ACCESS_TOKEN = data.access_token;
-      var rec_endpoint =
-        //"https://api.spotify.com/v1/recommendations";
 
-        "https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical%2Ccountry&seed_tracks=0c6xIDDpzE81m2q797ordA";
-      fetch(url, {
+      var url = `${RECOMMENDATION}?seed`;
+      fetch(RECOMMENDATION, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${ACCESS_TOKEN}`,

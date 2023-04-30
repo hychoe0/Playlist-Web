@@ -12,3 +12,14 @@ export const defaultNumPlays = [
   { value: "indie", label: "Indie Mix (< 5,000,000 plays)" },
   { value: "pop", label: "Popular Music (> 50,000,000 plays)" },
 ];
+
+export const moodValues = {
+  chill: {
+    target_acousticness: 0.8,
+    target_danceability: 0.2,
+    // ...
+  },
+};
+export const ARTIST =
+  "https://api.spotify.com/v1/recommendations/available-genre-seeds";
+export const RECOMMENDATION = "https://api.spotify.com/v1/recommendations";
