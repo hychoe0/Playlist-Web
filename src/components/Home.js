@@ -1,9 +1,10 @@
 import React from "react";
 import GenreDropDown from "./Selector/GenreDropDown/GenreDropDown.js";
-import MoodDropDown from "./Selector/VibeDropDown/VibeDropDown.js";
+import VibeDropDown from "./Selector/VibeDropDown/VibeDropDown.js";
 import NumPlayDropDown from "./Selector/NumPlayDropDown/NumPlayDropDown.jsx";
 import { defaultGenres, defaultMoods, defaultNumPlays } from "../constants.js";
 import { genreSeeds, vibeSeeds } from "../constants.js";
+import { Playlist } from "./Playlist/Playlist.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";
@@ -41,7 +42,7 @@ export const Home = () => {
           <GenreDropDown data={genreSeeds} setData={setGenre} />
         </span>
         <span id="mood-dropdown">
-          <MoodDropDown data={vibeSeeds} setData={setVibe} />
+          <VibeDropDown data={vibeSeeds} setData={setVibe} />
         </span>
         <span id="numPlay-dropdown">
           <NumPlayDropDown data={defaultNumPlays} setData={setNumPlay} />
@@ -54,6 +55,11 @@ export const Home = () => {
           onClick={() => console.log("upload-button clicked")}
         >
           Upload an image
+        </button>
+      </div>
+      <div className="submit">
+        <button type="button" id="submit-button" onClick={() => Playlist()}>
+          Submit
         </button>
       </div>
     </div>
