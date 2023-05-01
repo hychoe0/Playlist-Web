@@ -4,6 +4,7 @@ import { CLIENT_ID, CLIENT_SECRET } from "../../Credential.js";
 import { SPOTIFY, ARTIST, RECOMMENDATION } from "../../constants.js";
 
 import { Home } from "../Home.js";
+import { getGenre } from "../Selector/GenreDropDown/GenreDropDown.js";
 
 import "./Playlist.scss";
 
@@ -29,7 +30,7 @@ export function Playlist() {
         "?limit=10" +
         "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
         "&seed_genres=" +
-        `${Home.genre}` +
+        getGenre() +
         "&seed_tracks=126TblwXGNTUZ7RPMnThkU";
 
       fetch(url, {
@@ -43,5 +44,5 @@ export function Playlist() {
         .catch((error) => console.error(error));
     })
     .catch((error) => console.error(error));
-  console.log(Home.genre);
+  console.log(getGenre());
 }
