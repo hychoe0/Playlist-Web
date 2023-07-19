@@ -6,14 +6,13 @@ import { SPOTIFY, ARTIST, RECOMMENDATION, vibeSeeds } from "../../constants.js";
 import { getGenre } from "../Selector/GenreDropDown/GenreDropDown.js";
 import {
   getVibe,
-  //averageAcousticness,
+  getScores
 } from "../Selector/VibeDropDown/VibeDropDown.js";
 
 import "./Playlist.scss";
 
-const selectedVibes = getVibe();
-const acousticness = 1;
-//averageAcousticness(getVibe());
+const selectedVibe = getVibe();
+const acousticness = 0;
 
 export function Playlist() {
   const access_url =
@@ -41,10 +40,13 @@ export function Playlist() {
         getGenre() +
         "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
         "&target_acousticness=" +
-        acousticness +
-        "&target_danceability=1" +
-        "&target_energy=1" +
-        "&target_loudness=1";
+        getScores().at(0) +
+        "&target_danceability=" +
+        getScores().at(1) +
+        "&target_energy=" +
+        getScores().at(2) +
+        "&target_loudness=" +
+        getScores().at(3);
 
       fetch(url, {
         method: "GET",
@@ -57,5 +59,17 @@ export function Playlist() {
         .catch((error) => console.error(error));
     })
     .catch((error) => console.error(error));
-  console.log(acousticness);
+  console.log("?limit=10" +
+  "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
+  "&seed_genres=" +
+  getGenre() +
+  "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
+  "&target_acousticness=" +
+  getScores().at(0) +
+  "&target_danceability=" +
+  getScores().at(1) +
+  "&target_energy=" +
+  getScores().at(2) +
+  "&target_loudness=" +
+  getScores().at(3));
 }

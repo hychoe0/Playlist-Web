@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-// import { vibeSeeds } from "../../../constants";
+import { vibeSeeds } from "../../../constants";
 
 import "../DropDown.scss";
 
 const animatedComponents = makeAnimated();
 
-var selectedVibe = [];
+var selectedVibe;
 
 /**
  * data: data for dropdown selection
@@ -19,14 +19,14 @@ export default function VibeDropDown({ data, setData }) {
     label: vibe.label,
   }));
 
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelection = (selected) => {
-    setSelectedOptions(selected);
-    const vibe = selected.map((option) => option.value);
+    setSelectedOption(selected);
+    const vibe = selected ? selected.value : null;
     setData(vibe);
     selectedVibe = vibe;
-    console.log(selectedVibe);
+    console.log(getVibe());
   };
 
   return (
@@ -34,11 +34,11 @@ export default function VibeDropDown({ data, setData }) {
       <span id="selection-title">Select a Vibe</span>
       <Select
         className="dropdown"
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         components={animatedComponents}
-        defaultValue={[]}
         options={options}
-        isMulti
+        isMulti={false}
+        value={selectedOption}
         onChange={handleSelection}
         // onChange={(newData) => {
         //   const selectedOption = newData.value;
@@ -56,4 +56,25 @@ export function getVibe() {
   return selectedVibe;
 }
 
-export function averageScore() {}
+export function getScores() {
+  var scores = [];
+  var vibe_index;
+
+  for (let i = 0; i < vibeSeeds.length; ++i) {
+    if (selectedVibe === vibeSeeds[i].value) {
+      vibe_index = i;
+      break;
+    }
+  }
+
+  scores.push(vibeSeeds[vibe_index].acousticness);
+  scores.push(vibeSeeds[vibe_index].danceability);
+  scores.push(vibeSeeds[vibe_index].energy);
+  scores.push(vibeSeeds[vibe_index].loudness);
+
+  return scores;
+  // scores.push(vibeSeeds[vibe_index].acousticness);
+  
+  // return scores;
+  
+}
