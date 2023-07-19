@@ -10,14 +10,7 @@ const animatedComponents = makeAnimated();
  * data: data for dropdown selection
  * setData: useState
  */
-
-// export function setGenre({ data }) {
-//   const options = data.map((genre) => ({ value: genre, label: genre }));
-
-//   return options;
-// }
-
-var genreArray = [];
+var selectedGenres = [];
 
 export default function GenreDropDown({ data, setData }) {
   const options = data.map((genre) => ({ value: genre, label: genre }));
@@ -32,9 +25,9 @@ export default function GenreDropDown({ data, setData }) {
     setSelectedOptions(selected);
     const genre = selected.map((option) => option.value);
     setData(genre);
-    genreArray = genre;
+    selectedGenres = genre;
     // checking selectedOption
-    console.log(genreArray);
+    console.log(selectedGenres);
   };
 
   return (
@@ -61,5 +54,5 @@ export default function GenreDropDown({ data, setData }) {
 }
 
 export function getGenre() {
-  return genreArray;
+  return selectedGenres;
 }

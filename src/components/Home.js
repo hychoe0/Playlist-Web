@@ -4,7 +4,7 @@ import VibeDropDown from "./Selector/VibeDropDown/VibeDropDown.js";
 import NumPlayDropDown from "./Selector/NumPlayDropDown/NumPlayDropDown.jsx";
 import { defaultGenres, defaultMoods, defaultNumPlays } from "../constants.js";
 import { genreSeeds, vibeSeeds } from "../constants.js";
-import { Playlist } from "./Playlist/Playlist.js";
+import { Playlist } from "./Api/Playlist.js";
 
 import { FaArrowRight } from "react-icons/fa";
 import add_photo_icon from "./assets/add_photo_icon.svg";

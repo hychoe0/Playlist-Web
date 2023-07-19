@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { CLIENT_ID, CLIENT_SECRET } from "../../Credential.js";
 
-import { SPOTIFY, ARTIST, RECOMMENDATION } from "../../constants.js";
+import { SPOTIFY, ARTIST, RECOMMENDATION, vibeSeeds } from "../../constants.js";
 
-import { Home } from "../Home.js";
 import { getGenre } from "../Selector/GenreDropDown/GenreDropDown.js";
+import {
+  getVibe,
+  //averageAcousticness,
+} from "../Selector/VibeDropDown/VibeDropDown.js";
 
 import "./Playlist.scss";
+
+const selectedVibes = getVibe();
+const acousticness = 1;
+//averageAcousticness(getVibe());
 
 export function Playlist() {
   const access_url =
@@ -14,6 +21,7 @@ export function Playlist() {
     CLIENT_ID +
     "&client_secret=" +
     CLIENT_SECRET;
+
   fetch(SPOTIFY, {
     method: "POST",
     headers: {
@@ -31,7 +39,12 @@ export function Playlist() {
         "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
         "&seed_genres=" +
         getGenre() +
-        "&seed_tracks=126TblwXGNTUZ7RPMnThkU";
+        "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
+        "&target_acousticness=" +
+        acousticness +
+        "&target_danceability=1" +
+        "&target_energy=1" +
+        "&target_loudness=1";
 
       fetch(url, {
         method: "GET",
@@ -44,5 +57,5 @@ export function Playlist() {
         .catch((error) => console.error(error));
     })
     .catch((error) => console.error(error));
-  console.log(getGenre());
+  console.log(acousticness);
 }
