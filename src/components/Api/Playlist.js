@@ -11,9 +11,6 @@ import {
 
 import "./Playlist.scss";
 
-const selectedVibe = getVibe();
-const acousticness = 0;
-
 export function Playlist() {
   const access_url =
     "grant_type=client_credentials&client_id=" +
@@ -35,10 +32,10 @@ export function Playlist() {
       var url =
         RECOMMENDATION +
         "?limit=10" +
-        "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
+        // "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
         "&seed_genres=" +
         getGenre() +
-        "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
+        // "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
         "&target_acousticness=" +
         getScores().at(0) +
         "&target_danceability=" +
@@ -59,17 +56,17 @@ export function Playlist() {
         .catch((error) => console.error(error));
     })
     .catch((error) => console.error(error));
-  console.log("?limit=10" +
-  "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
-  "&seed_genres=" +
-  getGenre() +
-  "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
-  "&target_acousticness=" +
-  getScores().at(0) +
-  "&target_danceability=" +
-  getScores().at(1) +
-  "&target_energy=" +
-  getScores().at(2) +
-  "&target_loudness=" +
-  getScores().at(3));
+  // console.log("?limit=10" +
+  // "&seed_artists=3XHO7cRUPCLOr6jwp8vsx5" +
+  // "&seed_genres=" +
+  // getGenre() +
+  // "&seed_tracks=126TblwXGNTUZ7RPMnThkU" +
+  // "&target_acousticness=" +
+  // getScores().at(0) +
+  // "&target_danceability=" +
+  // getScores().at(1) +
+  // "&target_energy=" +
+  // getScores().at(2) +
+  // "&target_loudness=" +
+  // getScores().at(3));
 }
